@@ -17,7 +17,7 @@ const initialState: reduxType = {
 
 // 非同期取得
 export const fetchCalculationData = createAsyncThunk(
-  `${API_URL}/calculation`,
+  `calculation`,
   async () => {
     const response = await fetch(`${API_URL}/calculation`);
     const data = response.json();

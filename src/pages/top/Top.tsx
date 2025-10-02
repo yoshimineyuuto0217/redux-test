@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import Title from "../../components/common/Title";
 import { useEffect } from "react";
+import { fetchCalculationData } from "../../redux/calculationSlice";
+import { useAppDispatch } from "../../hooks/useRedux";
 
 const Top = () => {
   // API事前呼び出す
-  useEffect(() => {},[])
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchCalculationData());
+    console.log("呼ばれました")
+  }, [dispatch]);
+
   return (
     <div className="w-2/3 mx-auto h-screen flex flex-col justify-center">
       <div className="flex flex-col justify-center ">

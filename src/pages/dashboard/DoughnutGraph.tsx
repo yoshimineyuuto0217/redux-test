@@ -1,20 +1,21 @@
 import type { ChartData } from "chart.js";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { useFetchTotallingData } from "../../hooks/useFetchTotallingData";
 import { randomColors } from "../../utils/randomColors";
+import type { TotallingTypes } from "../../hooks/useFetchTotallingData";
+import { useSelector } from "react-redux";
+import type { RootState } from "../../main";
 
 const DoughnutGraph = () => {
-  const { fetchTotallingData, totalPiece, allProduct } =
-    useFetchTotallingData();
+  const { tDate } = useSelector((state: RootState) => state.fetchCalculation);
+  console.log("reduxを使用してる所で生産合計値を取得", tDate);
 
-  useEffect(() => {
-    fetchTotallingData();
-  }, [fetchTotallingData]);
+  const totalQuantity = tDate.map((d: TotallingTypes) => d.total_quantity);
+  const allProduct = tDate.map((d: TotallingTypes) => d.product_name);
 
   const dataColors = useMemo(
-    () => randomColors(totalPiece.length),
-    [totalPiece]
+    () => randomColors(totalQuantity.length),
+    [totalQuantity]
   );
 
   // ドーナツ型のデータ
@@ -24,7 +25,7 @@ const DoughnutGraph = () => {
       {
         label: "今月生産した製品分類",
         // パーセンテージで表示
-        data: totalPiece,
+        data: totalQuantity,
         backgroundColor: dataColors,
       },
     ],

@@ -19,6 +19,8 @@ export const BarGraph = ({
   const { fetchTotallingData, totalPiece, allProduct } =
     useFetchTotallingData();
 
+    console.log("reduxを使用してない所")
+    
   useEffect(() => {
     fetchTotallingData();
   }, []);

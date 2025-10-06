@@ -4,18 +4,17 @@ import type { ChartData } from "chart.js";
 import { useMemo } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { randomColors } from "../../utils/randomColors";
-import { useSelector } from "react-redux";
 import type { CalculationTypes } from "../../hooks/useFetchCalculationData";
-
+import { useSelector } from "react-redux";
+import type { RootState } from "../../main";
 
 const CalculationDoughnutGraph = () => {
-  
   //stateの後はstoreに登録してるものを書く
-  const { data } = useSelector((state:any) => state.fetchCalculation);
-  console.log("reduxの中身",data)
+  const { cData } = useSelector((state: RootState) => state.fetchCalculation);
+  console.log("redux使用してる所で製品金額合計値を取得", cData);
 
-  const totalPiece = data.map((d: CalculationTypes) => d.total_sales);
-  const allProduct = data.map((d: CalculationTypes) => d.product_name);
+  const totalPiece = cData.map((d: CalculationTypes) => d.total_sales);
+  const allProduct = cData.map((d: CalculationTypes) => d.product_name);
 
   const dataColors = useMemo(
     () => randomColors(totalPiece.length),

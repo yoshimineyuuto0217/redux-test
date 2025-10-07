@@ -10,7 +10,7 @@ const Jotai = () => {
         <CollectAtom />
       </div>
       <Link
-        to="/jotai/apijotai"
+        to="/jotai/api"
         className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
       >
         API-Jotai

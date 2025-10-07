@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Top = () => {
   // API事前呼び出す
-  useEffect(() => {},[])
+  useEffect(() => {}, []);
   return (
     <div className="w-2/3 mx-auto h-screen flex flex-col justify-center">
       <div className="flex flex-col justify-center ">
@@ -27,6 +27,12 @@ const Top = () => {
             className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
           >
             進捗状況
+          </Link>
+          <Link
+            to="/jotai"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            Jotai
           </Link>
         </div>
       </div>

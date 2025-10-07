@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../main";
 
 const CalculationDoughnutGraph = () => {
+  
   //stateの後はstoreに登録してるものを書く
   const { cData } = useSelector((state: RootState) => state.fetchCalculation);
   console.log("redux使用してる所で製品金額合計値を取得", cData);

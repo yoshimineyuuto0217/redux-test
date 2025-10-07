@@ -60,6 +60,12 @@ const Top = () => {
           >
             React-Hook-Form
           </Link>
+          <Link
+            to="/jotai"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            Jotai
+          </Link>
         </div>
       </div>
     </div>

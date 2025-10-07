@@ -31,7 +31,6 @@ const Top = () => {
       console.log("Redux Persist のデータを利用");
     }
   }, [dispatch, cData, tDate, lastFetched]);
-
   return (
     <div className="w-2/3 mx-auto h-screen flex flex-col justify-center">
       <div className="flex flex-col justify-center ">

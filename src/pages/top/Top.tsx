@@ -66,6 +66,30 @@ const Top = () => {
           >
             Jotai
           </Link>
+          <Link
+            to="/zustand"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            Zustand
+          </Link>
+          <Link
+            to="/story"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            StoryBook
+          </Link>
+          <Link
+            to="/observer"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            IntersectionObserver
+          </Link>
+          <Link
+            to="/tanstack"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            タンスタッククエリ
+          </Link>
         </div>
       </div>
     </div>

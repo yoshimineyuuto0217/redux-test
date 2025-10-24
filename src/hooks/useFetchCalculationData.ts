@@ -8,6 +8,10 @@ export interface CalculationTypes {
     total_sales: number
 }
 
+export interface testTypes{
+  product_name:string;
+}
+
 export const useFetchCalculationData = () => {
   const [totalling, setTotalling] = useState<CalculationTypes[]>([]);
   const [totalPiece, setTotalPiece] = useState<number[]>([]);

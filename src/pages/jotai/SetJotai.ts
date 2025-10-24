@@ -1,11 +1,12 @@
-import { useSetAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { API_URL } from "../../constants/urlConstants";
 import { useEffect } from "react";
-import { collectAtom } from "./atom";
+import { collectAtom, localAtom } from "./atom";
 
 // ここでAPIを上書き
 export const SetJotai = () => {
   const overRideCollectAtom = useSetAtom(collectAtom);
+  const [productData, setProductData] = useAtom(localAtom);
   useEffect(() => {
     const response = async () => {
       const res = await fetch(`${API_URL}/calculation`, {
@@ -14,9 +15,9 @@ export const SetJotai = () => {
       });
       const data = await res.json();
       overRideCollectAtom(data);
-      console.log("Jotaiが呼ばれてる")
+      setProductData(data);
     };
     response();
   }, []);
-  return null;
+  return { productData };
 };

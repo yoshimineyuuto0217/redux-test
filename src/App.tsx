@@ -15,9 +15,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Observer from "./pages/observer/Observer";
 import TanStack from "./pages/tanStack/TanStack";
 import { QueryClient } from "@tanstack/react-query";
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
+import ZodForm from "./pages/zod/zodForm";
 
 function App() {
   const queryClient = new QueryClient({
@@ -52,6 +53,7 @@ function App() {
             <Route path="/zustand/nest" element={<ZustandNest />} />
             <Route path="/observer" element={<Observer />} />
             <Route path="/tanstack" element={<TanStack />} />
+            <Route path="zod" element={<ZodForm />} />
           </Routes>
         </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false} />

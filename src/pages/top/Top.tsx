@@ -90,6 +90,12 @@ const Top = () => {
           >
             タンスタッククエリ
           </Link>
+          <Link
+            to="/zod"
+            className="w-[35%] h-[140px] bg-red-300 flex justify-center items-center"
+          >
+            Zod
+          </Link>
         </div>
       </div>
     </div>
